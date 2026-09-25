@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Greenhouse Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         Dashboard Title
+    ========================================= -->
+
+    <h1>
+        🌱 Smart Greenhouse Dashboard
+    </h1>
+
+
+    <!-- ========================================
+         Sensor Cards
+    ========================================= -->
+
+    <section class="sensor-cards">
+
+       <!-- Soil -->
+<div class="card">
+
+    <h3>Soil Moisture</h3>
+
+    <p id="soil">--</p>
+
+    <small>
+        Status: <span id="soil-status">--</span>
+    </small>
+
+</div>
+
+
+        <!-- Temperature -->
+        <div class="card">
+
+            <h3>Temperature</h3>
+
+            <p id="temperature">
+                --
+            </p>
+
+        </div>
+
+
+        <!-- Humidity -->
+        <div class="card">
+
+            <h3>Humidity</h3>
+
+            <p id="humidity">
+                --
+            </p>
+
+        </div>
+
+
+        <!-- Light -->
+        <div class="card">
+
+            <h3>Light</h3>
+
+            <p id="light">
+                --
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         Manual Control
+    ========================================= -->
+
+    <section class="controls">
+
+        <h2>Manual Control</h2>
+
+
+        <!-- Pump -->
+
+        <div class="control-item">
+
+            <span>Pump</span>
+
+            <button
+                id="pump-btn"
+                onclick="toggleRelay('pump')">
+
+                OFF
+
+            </button>
+
+        </div>
+
+
+        <!-- Fan -->
+
+        <div class="control-item">
+
+            <span>Fan</span>
+
+            <button
+                id="fan-btn"
+                onclick="toggleRelay('fan')">
+
+                OFF
+
+            </button>
+
+        </div>
+
+
+        <!-- Grow Light -->
+
+        <div class="control-item">
+
+            <span>Grow Light</span>
+
+            <button
+                id="light-btn"
+                onclick="toggleRelay('light')">
+
+                OFF
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         History Chart
+    ========================================= -->
+
+    <section class="chart-section">
+
+        <h2>History</h2>
+
+        <canvas id="historyChart"></canvas>
+
+    </section>
+
+
+
+    <!-- ========================================
+         AI Disease Detection
+    ========================================= -->
+
+    <section class="ai-section">
+
+        <h2>AI Disease Detection</h2>
+
+        <p id="ai-result">
+            --
+        </p>
+
+    </section>
+
+
+
+    <!-- ========================================
+         JavaScript
+    ========================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
